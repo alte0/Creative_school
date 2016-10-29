@@ -1,0 +1,23 @@
+{
+  "name": "creative-school",
+  "version": "1.0.0",
+  "description": "курсы верстки creative",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alte0/Creative_school.git"
+  },
+  "author": "Alte0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alte0/Creative_school/issues"
+  },
+  "homepage": "https://github.com/alte0/Creative_school#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp-autoprefixer": "^3.1.1"
+  }
+}
