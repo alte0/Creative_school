@@ -1,0 +1,9 @@
+$base-font: Arial, sans-serif;
+$base-color-font: blue;
+$bg-color: #ffb6c1;
+
+body {
+	font-family: $base-font;
+	color: $base-color-font;
+	background-color: $bg-color;
+}
