@@ -2,3 +2,11 @@ body {
   font-family: Arial, sans-serif;
   color: blue;
   background-color: #ffb6c1; }
+
+.layout {
+  color: white; }
+
+li a {
+  color: red; }
+  li a:hover {
+    color: green; }

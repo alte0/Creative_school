@@ -1,0 +1,10 @@
+mixin bredcrumbs(a)
+  ul.bredcrumbs&attributes(attributes)
+    if a.bredcrumbs
+      each bredcrumb in a.bredcrumbs
+        li
+          if bredcrumb.link
+            a(href='#')
+              span!= bredcrumb.name
+          else
+                span!= bredcrumb.name

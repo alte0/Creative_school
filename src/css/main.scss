@@ -1,9 +1,21 @@
 $base-font: Arial, sans-serif;
 $base-color-font: blue;
 $bg-color: #ffb6c1;
-
+$color-menu: red;
+$color-menu-hover: green;
 body {
 	font-family: $base-font;
 	color: $base-color-font;
 	background-color: $bg-color;
+}
+.layout {
+	color: $base-color-font + 500;
+}
+li {
+	a{
+		color: $color-menu;
+		&:hover {
+			color: $color-menu-hover
+		}
+	}
 }
