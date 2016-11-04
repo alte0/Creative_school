@@ -1,0 +1,6 @@
+- var menuList = ['О клубе', 'Мероприятия', 'Возможности', 'Привилегии', 'Форум', 'Контакты'];
+
+nav.navigate
+	ul.navigate-list
+		each item in menuList
+			li.navigate-item: a(href='#') #{item}

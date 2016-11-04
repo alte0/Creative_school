@@ -6,7 +6,17 @@ body {
 .layout {
   color: white; }
 
-li a {
+a {
   color: red; }
-  li a:hover {
+  a:hover {
     color: green; }
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }

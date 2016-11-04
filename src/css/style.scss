@@ -1,0 +1,42 @@
+//============== var 
+$bgHederAndFoter: #5c9800;
+$color-font: white;
+$color-p-select: #f1b000;
+$container-width: 960px;
+
+//=============== mixins
+@mixin margin ($margin: 0px) {
+	margin: $margin;
+}
+@mixin padding ($padding: 0px) {
+	padding: $padding;
+}
+//===============style
+body {
+	@include margin();
+}
+
+.clearfix {
+	content: "";
+	display: table;
+	clear: both;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container {
+	width: $container-width;
+	@include margin(0 auto);
+	@include padding(0 10px 0 10px);
+}
+
+p::selection, p::-moz-selection {
+	color: $color-p-select;
+}
+header, footer  {
+	background-color: $bgHederAndFoter;
+	color: $color-font;
+}

@@ -1,0 +1,6 @@
+extends ../templates/two/layout.pug
+block news
+	- var x = 5;
+	- for (var i=1; i<=x; i++) {
+		+news-post
+	- }
