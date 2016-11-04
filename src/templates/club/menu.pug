@@ -1,0 +1,6 @@
+- var menuList = ['О клубе', 'Мероприятия', 'Возможности', 'Привилегии', 'Форум', 'Контакты'];
+//имя-блока__имя-элемента_имя-модификатора
+nav.navigashion
+	ul.navigashion__list
+		each item in menuList
+			li.navigashion__item: a(href='#') #{item}
