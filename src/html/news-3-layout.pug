@@ -1,0 +1,13 @@
+extends ../templates/3-layout/layout.pug
+block content
+	.container
+		.row
+			.col-lg-12
+				.page-header
+					h1 Новости
+					p Очень много интересного происходит у нас в офисе, но так как это текст рыба, то и новость будет одна и та же
+				-var i=0
+				while i<3
+					+news
+					-i++
+				include ../templates/3-layout/pagination

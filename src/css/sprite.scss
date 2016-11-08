@@ -1,0 +1,76 @@
+$path: "../img/sprite.png";
+
+.iconFb, .social__btn_fb:before {
+	position: absolute;
+	content: "";
+	left: 11px;
+	top: 9px;
+	background: url("#{$path}") 0 0;
+	width: 6px;
+	height: 12px;
+}
+
+.iconShareFb, .socialShare__btn-link_fb::after {
+	background: url("#{$path}") 0 -12px;
+	width: 6px;
+	height: 11px;
+}
+
+.iconShareGplus, .socialShare__btn-link_gplus:after {
+	background: url("#{$path}") 0 -23px;
+	width: 11px;
+	height: 11px;
+}
+
+.iconShareOk, .socialShare__btn-link_ok:after {
+	background: url("#{$path}") 0 -34px;
+	width: 9px;
+	height: 14px;
+}
+
+.iconShareTw, .socialShare__btn-link_tw:after {
+	background: url("#{$path}") 0 -48px;
+	width: 11px;
+	height: 10px;
+}
+
+.iconVK, .social__btn_vk:before {
+	position: absolute;
+	content: "";
+	left: 6px;
+	top: 10px;
+	background: url("#{$path}") 0 -58px;
+	width: 14px;
+	height: 8px;
+}
+
+.iconYoutube, .social__btn_yu:before {
+	position: absolute;
+	content: "";
+	left: 6px;
+	top: 9px;
+	background: url("#{$path}") 0 -66px;
+	width: 14px;
+	height: 10px;
+}
+
+.logo:before {
+	position: absolute;
+	content: "";
+	left: -47px;
+	top: -10px;
+	background: url("#{$path}") 0 -76px;
+	width: 31px;
+	height: 33px;
+}
+
+.quotes:before {
+	position: absolute;
+	content: "";
+	left: -42px;
+	top: 7px;
+	background: url("#{$path}") 0 -109px;
+	width: 25px;
+	height: 22px;
+}
+
