@@ -1,0 +1,42 @@
+.header
+	.container
+		.row
+			.col-lg-5
+				ul.social-menu
+					li: a(href='#')
+						i.fa.fa-instargam
+					li: a(href='#')
+						i.fa.fa-facebook
+					li: a(href='#')
+						i.fa.fa-vk
+			.col-lg-2
+				.logo
+					img(src="./img/logo.png")
+			.col-lg-5
+				.header-search
+					.input-group
+						input.form-control(type='button', placeholder='Я ищу...')
+						span.input-group-btn
+							button.btn.btn-default(type='button') Go!
+							i.fa.fa-search
+		ul.menu
+			li
+				a.menu-item.menu-item__active(href='#')
+					.menu-item__image
+						img(src="./img/menu-item.png")
+					.menu-item__title элемент меню
+			- i=0
+			while i<6
+				a.menu-item(href='#')
+					.menu-item__image
+						img(src="./img/menu-item.png")
+					.menu-item__title элемент меню
+						-i++
+	.breadcrumbs
+		.container
+			ol.breadcrumb
+				li
+					a(href='#') Главная
+				li.active Портфолио
+
+		

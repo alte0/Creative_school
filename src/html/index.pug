@@ -1,17 +1,10 @@
-extends ../templates/layout.pug
-block content
-	
-	//- - i = 0
-	//- while i<10
-	//- 	+bredcrumbs({
-	//- 		bredcrumbs: [
-	//- 			{
-	//- 				name: 'Главная',
-	//- 				link: 'index.html'
-	//- 			},
-	//- 			{
-	//- 				name: 'Новость'
-	//- 			}
-	//- 		]
-	//- 	})
-	//- 	- i++
+doctype html
+html(lang="en")
+	head 
+		title Навигация
+	body
+		div Навигация
+		h3: a(href="html/index-maket.html", target="_blank") макет Клуб жильцов
+		h3: a(href="html/index-3-layout.html", target="_blank") макет из 3 файлов (бутстрап)
+		h3: a(href="html/index-v1.html", target="_blank") подкючение новости через миксину
+		h3: a(href="html/index-v2.html", target="_blank") подкючение новости через файл

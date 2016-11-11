@@ -1,1 +1,24 @@
-body{font-family:Arial,sans-serif;color:blue;background-color:#ffb6c1}.layout{color:#fff}a{color:red}a:hover{color:green}.clearfix,.clearfix:after{content:"";display:table;clear:both}
+body {
+  font-family: Arial, sans-serif;
+  color: blue;
+  background-color: #ffb6c1; }
+
+.layout {
+  color: white; }
+
+a {
+  color: red; }
+  a:hover {
+    color: green; }
+
+.clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIkYmFzZS1mb250OiBBcmlhbCwgc2Fucy1zZXJpZjtcclxuJGJhc2UtY29sb3ItZm9udDogYmx1ZTtcclxuJGJnLWNvbG9yOiAjZmZiNmMxO1xyXG4kY29sb3ItbWVudTogcmVkO1xyXG4kY29sb3ItbWVudS1ob3ZlcjogZ3JlZW47XHJcblxyXG5cclxuYm9keSB7XHJcblx0Zm9udC1mYW1pbHk6ICRiYXNlLWZvbnQ7XHJcblx0Y29sb3I6ICRiYXNlLWNvbG9yLWZvbnQ7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogJGJnLWNvbG9yO1xyXG59XHJcblxyXG4ubGF5b3V0IHtcclxuXHRjb2xvcjogJGJhc2UtY29sb3ItZm9udCArIDUwMDtcclxufVxyXG5cclxuYXtcclxuXHRjb2xvcjogJGNvbG9yLW1lbnU7XHJcblx0Jjpob3ZlciB7XHJcblx0XHRjb2xvcjogJGNvbG9yLW1lbnUtaG92ZXJcclxuXHR9XHJcbn1cclxuXHJcbi5jbGVhcmZpeCB7XHJcblx0Y29udGVudDogXCJcIjtcclxuXHRkaXNwbGF5OiB0YWJsZTtcclxuXHRjbGVhcjogYm90aDtcclxufVxyXG4uY2xlYXJmaXg6YWZ0ZXIge1xyXG5cdGNvbnRlbnQ6IFwiXCI7XHJcblx0ZGlzcGxheTogdGFibGU7XHJcblx0Y2xlYXI6IGJvdGg7XHJcbn1cclxuXHJcbiJdLCJtYXBwaW5ncyI6IkFBT0EsQUFBQSxJQUFJLENBQUM7RUFDSixXQUFXLEVBUkEsS0FBSyxFQUFFLFVBQVU7RUFTNUIsS0FBSyxFQVJZLElBQUk7RUFTckIsZ0JBQWdCLEVBUk4sT0FBTyxHQVNqQjs7QUFFRCxBQUFBLE9BQU8sQ0FBQztFQUNQLEtBQUssRUFBRSxLQUFnQixHQUN2Qjs7QUFFRCxBQUFBLENBQUMsQ0FBQTtFQUNBLEtBQUssRUFmTyxHQUFHLEdBbUJmO0VBTEQsQUFBQSxDQUFDLEFBRUMsTUFBTSxDQUFDO0lBQ1AsS0FBSyxFQWhCWSxLQUFLLEdBaUJ0Qjs7QUFHRixBQUFBLFNBQVMsQ0FBQztFQUNULE9BQU8sRUFBRSxFQUFHO0VBQ1osT0FBTyxFQUFFLEtBQU07RUFDZixLQUFLLEVBQUUsSUFBSyxHQUNaOztBQUNELEFBQVMsU0FBQSxBQUFBLE1BQU0sQ0FBQztFQUNmLE9BQU8sRUFBRSxFQUFHO0VBQ1osT0FBTyxFQUFFLEtBQU07RUFDZixLQUFLLEVBQUUsSUFBSyxHQUNaIiwibmFtZXMiOltdfQ== */

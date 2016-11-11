@@ -377,11 +377,31 @@ blockquote {
 	&__btn_gplus:after {
 		background-color: #d34836;
 	}
-
+	&__btn_fb:before, &__btn_tw:before, &__btn_ok:before, &__btn_gplus:before {
+		content: ''; 
+		position: absolute;
+		left: 30px;
+		bottom: 3px;
+		border: 7px solid transparent;
+	}
+	&__btn_fb:before {
+		border-right: 5px solid #39579a;
+	}
+	&__btn_tw:before {
+		border-right: 5px solid #01acee;
+	}
+	&__btn_ok:before {
+		border-right: 5px solid #ff8700;
+	}
+	&__btn_gplus:before {
+		border-right: 5px solid #d34836;
+	}
 
 	&__btn-link {
 		color: #7d7d7d;
 		text-decoration: none;
+		min-width: 12px;
+		display: inline-block;
 		@include padding(7px 11px);
 		position: relative;
 		&_fb:after, 
