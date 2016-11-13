@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	include head
+	body
+		include mixins
+		include header
+		.content
+			block wrapper
+			// Button trigger modal
+			button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+				| Launch demo modal
+			// Modal
+			#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+				.modal-dialog(role='document')
+					.modal-content
+						.modal-header
+							button.close(type='button', data-dismiss='modal', aria-label='Close')
+								span(aria-hidden='true') ×
+							h4#myModalLabel.modal-title Modal title
+						.modal-body
+							.slider
+								- i=0
+								while i<10
+									.slider__item
+										img(src="https://randomuser.me/api/portraits/women/"+i+".jpg")
+										- i++
+						.modal-footer
+							button.btn.btn-default(type='button', data-dismiss='modal') Закрыть
+							button.btn.btn-primary(type='button') Сохранить изменения
+
+		include footer
+		script(src="../js/main.js")

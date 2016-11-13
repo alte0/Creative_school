@@ -15,6 +15,7 @@ var pngquant = require('imagemin-pngquant');
 // костыль чтоб работать только с новыми картинками
 var newer = require('gulp-newer');
 var rimraf = require('rimraf');
+var rigger = require('gulp-rigger');
 
 var path = {
 	src: {
@@ -104,16 +105,20 @@ gulp.task('sass:dev', function () {
 
 // копируем js файлы
 gulp.task('copyJs:dev', function(){
-	gulp.src( path.src.js ).pipe( gulp.dest( path.build.js ) )
+	gulp.src( path.src.js )
 	.pipe(plumber())
+	.pipe(rigger())
 	.pipe(uglify())
+	.pipe( gulp.dest( path.build.js ) )
 	.on('end', browserSync.reload);
 });
 // копируем js файлы
 gulp.task('copyJs:bulid', function(){
-	gulp.src( path.src.js ).pipe( gulp.dest( path.build.js ) )
+	gulp.src( path.src.js )
 	.pipe(plumber())
+	.pipe(rigger())
 	.pipe(uglify())
+	.pipe( gulp.dest( path.build.js ) )
 });
 
 //Наблюдаем

@@ -1,0 +1,1 @@
+$(".slider").slick(),$("#myModal").on("shown.bs.modal",function(s){$(".slider").slick("setPosition")});

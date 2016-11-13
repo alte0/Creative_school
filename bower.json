@@ -16,5 +16,8 @@
   ],
   "dependencies": {
     "bootstrap-sass": "^3.3.7"
+  },
+  "devDependencies": {
+    "slick-carousel": "^1.6.0"
   }
 }
