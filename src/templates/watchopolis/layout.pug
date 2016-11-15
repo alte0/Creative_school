@@ -1,0 +1,117 @@
+doctype html
+html(lang="en")
+	include head
+body
+	include header
+	.container-fluid
+				.row
+					.col-lg-9
+						.sorting.clearfix
+							.row
+								.col-lg-3.col-md-3.col-sm-3.col-xs-7.pull-left
+									select.form-control
+										option(selected='selected') Sort By
+										option 1
+										option 2
+										option 3
+								.col-lg-3.col-md-3.col-sm-3.col-xs-5.pull-right.text-right
+									span.text-found 12,487 Titles Found
+
+						.row
+							-i=0
+							while i<12
+								.col-lg-3.col-md-3.col-sm-3.col-xs-12
+									.thumbnail
+										a(href="", data-toggle='modal', data-target='#myModal'): img(src='http://placehold.it/300x400', alt='...')
+										.caption
+											h3: a(href="") Thumbnail label
+											p Cras justo odio, dapibus ac facilisis in, egestas quam.
+										#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+											.modal-dialog(role='document')
+												.modal-content
+													.modal-header
+														button.close(type='button', data-dismiss='modal', aria-label='Close')
+															span(aria-hidden='true') ×
+													.modal-body
+														.slider
+															-j=0
+															while j<4
+																.slider__item
+																	img(src='http://placehold.it/300x300', alt='...')
+																	-j++
+											-i++
+
+						nav.clearfix
+							ul.pagination.pull-right
+								li
+									a(href='#', aria-label='Previous')
+										span(aria-hidden='true') «
+								li
+									a(href='#') 1
+								li
+									a(href='#') 2
+								li
+									a(href='#') 3
+								li
+									a(href='#') 4
+								li
+									a(href='#') 5
+								li
+									a(href='#', aria-label='Next')
+										span(aria-hidden='true') »
+
+					aside.col-lg-3
+						.navbar.navbar-default.filter
+							.panel-heading
+								h4.panel-title FILTER BY
+							.filter-item.filter-item__active
+								i.icon-clock
+									a.navbar-link(href='#') Recently added
+							.filter-item
+								i.icon-heart-empty
+									a.navbar-link(href='#') Most Popur
+							.filter-item
+								i.icon-star-empty
+									a.navbar-link(href='#') Highest Rating
+
+						.panel.panel-primary.panel-primary__gray
+							.panel-heading.panel-heading__light-blue
+								h3.panel-title
+									i.icon-lock
+									| Quick Login
+							.panel-body
+								form.form-horizontal
+									.form-group
+										label.col-sm-2.control-label(for='inputEmail3') username
+									.form-group
+										.col-sm-12
+											input#inputEmail3.form-control(type='email', placeholder='Email')
+									.form-group
+										label.col-sm-2.control-label(for='inputPassword3') Password
+									.form-group
+										.col-sm-12
+											input#inputPassword3.form-control(type='password', placeholder='Password')
+									.form-group
+										.col-sm-12
+											.checkbox
+												label
+													input(type='checkbox')
+													|  Remember me
+									.form-group
+										.col-sm-12
+											button.btn.btn-default(type='submit') Login
+						.panel.panel-primary.panel-primary__gray
+							.panel-heading.panel-heading__light-blue
+								h3.panel-title
+									i.icon-commenting-o
+									| Latest Comments
+							.panel-body
+								-i=0
+								while i<4
+									.comments-item
+										h4 Comment title
+										p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante solicitudin commodo. Cras purus oodio, vestibulum in vulputate at.
+										-i++
+				hr.hr-margin
+	include footer
+	script(src="../js/main.js")

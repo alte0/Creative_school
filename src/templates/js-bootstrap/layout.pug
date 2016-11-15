@@ -16,7 +16,7 @@ html(lang="en")
 						.modal-header
 							button.close(type='button', data-dismiss='modal', aria-label='Close')
 								span(aria-hidden='true') ×
-							h4#myModalLabel.modal-title Modal title
+							h4#myModalLabel.modal-title Modal заголовок
 						.modal-body
 							.slider
 								- i=0
@@ -25,8 +25,8 @@ html(lang="en")
 										img(src="https://randomuser.me/api/portraits/women/"+i+".jpg")
 										- i++
 						.modal-footer
-							button.btn.btn-default(type='button', data-dismiss='modal') Закрыть
-							button.btn.btn-primary(type='button') Сохранить изменения
+							//- button.btn.btn-default(type='button', data-dismiss='modal') Закрыть
+							//- button.btn.btn-primary(type='button') Сохранить изменения
 
 		include footer
 		script(src="../js/main.js")

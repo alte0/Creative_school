@@ -16,6 +16,7 @@ var pngquant = require('imagemin-pngquant');
 var newer = require('gulp-newer');
 var rimraf = require('rimraf');
 var rigger = require('gulp-rigger');
+// var pugInheritance = require('gulp-pug-inheritance');
 
 var path = {
 	src: {
@@ -23,14 +24,16 @@ var path = {
 		pug: './src/html/**/*.pug',
 		sass: './src/css/*.scss',
 		js: './src/js/**/*.js',
-		image: './src/img/**/*.*'
+		image: './src/img/**/*.*',
+		font: './src/font/**/*.*'
 	},
 	build: {
 		//готовые файлы
 		src: './build/html/',
 		style: './build/css/',
 		js: './build/js/',
-		image: './build/img/'
+		image: './build/img/',
+		font: './build/font/'
 	},
 	watch: {
 		//смотрим за изменениями
@@ -38,7 +41,8 @@ var path = {
 		templates: './src/templates/**/*.pug',
 		style: './src/css/**/*.scss',
 		js: './src/js/**/*.js',
-		image: './src/img/**/*.*'
+		image: './src/img/**/*.*',
+		font: './src/font/**/*.*'
 	},
 	clean: './build'
 
@@ -50,6 +54,12 @@ var server = {
 		baseDir: './build'
 	}
 };
+
+// gulp.task('jade-inheritance', function() {
+//   gulp.src('/src/*.pug')
+//     .pipe(pugInheritance({basedir: '/templates/'}))
+//     .pipe(pug());
+// });
 
 // удаление папки build. переменная нужна
 gulp.task('clean', function(cb){
@@ -103,6 +113,13 @@ gulp.task('sass:dev', function () {
     .on('end', browserSync.reload);
 });
 
+// копируем Font
+gulp.task('copyFont', function(){
+	gulp.src( path.src.font )
+	.pipe(plumber())
+	.pipe( gulp.dest( path.build.font ) )
+	.on('end', browserSync.reload);
+});
 // копируем js файлы
 gulp.task('copyJs:dev', function(){
 	gulp.src( path.src.js )
@@ -128,6 +145,7 @@ gulp.task("watch", function() {
 	gulp.watch(path.watch.templates, ['html']);
 	gulp.watch(path.watch.style, ['sass:dev']);
 	gulp.watch(path.watch.js, ['copyJs:dev']);
+	gulp.watch(path.watch.font, ['copyFont']);
 	gulp.watch(path.watch.image, ['image']);
 	//отдельный gulp-watch
 	// watch([path.watch.pug], function(event, cb){
@@ -154,12 +172,12 @@ gulp.task('image', function () {
 
 // development
 gulp.task('dev', function(){
-	gulp.start('html', 'sass:dev', 'copyJs:dev', 'image')
+	gulp.start('html', 'sass:dev', 'copyJs:dev', 'copyFont', 'image')
 })
 
 //build
 gulp.task('build-project', function(){
-	gulp.start('html', 'sass:build', 'copyJs:bulid', 'image')
+	gulp.start('html', 'sass:build', 'copyJs:bulid', 'copyFont', 'image')
 })
 
 // development
