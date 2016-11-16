@@ -1,0 +1,15 @@
+.img-wrap {
+	text-align: center;
+}
+.img {
+	width: 50px;
+	@media (min-width: 768px) {
+		width: 70px;
+	}
+	@media (min-width: 992px) {
+		width: 100px;
+	}
+	@media (min-width: 1200px) {
+		width: 500px;
+	}
+}
