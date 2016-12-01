@@ -3,15 +3,15 @@
 }
 .img {
 	width: 50px;
-	@media (min-width: 768px) {
-		width: 70px;
-	}
-	@media (min-width: 992px) {
-		width: 100px;
-	}
-	@media (min-width: 1200px) {
-		width: 200px;
-	}
+	// @media (min-width: 768px) {
+	// 	width: 70px;
+	// }
+	// @media (min-width: 992px) {
+	// 	width: 100px;
+	// }
+	// @media (min-width: 1200px) {
+	// 	width: 200px;
+	// }
 }
 
 .up {
@@ -27,4 +27,206 @@
 .form {
 	padding: 15px;
 	border: 2px solid black;
+}
+.elem {
+	width: 25%;
+	float: left;
+	background-color: red;
+	margin-bottom: 30px;
+	margin-left: 1%;
+	padding-top: 5px;
+	word-wrap: break-word;
+}
+.cool-tooltip {
+	position: absolute;
+	padding: 5px;
+	background: #000;
+	color: #fff;
+	pointer-events: none;
+}
+.class {
+	padding: 15px;
+	margin-left: 5%;
+	width: 40%;
+	float: left;
+	&.active {
+		opacity: 1;
+	}
+}
+// html, body, .wrap-block {
+// 	height: 100%;
+// }
+// .wrap-block {
+// 	//ствится у родителя
+// 	// perspective: 100px;
+// 	&:hover {
+// 		.animate-block {
+// 			animation: bounce 1s ease-out 0.2s infinite;
+//
+// 		}
+// 		// background-color:  red;
+// 		// font-size: 30px;
+// 		// transform: rotate3d(0, 1, 0, 360deg ) translate3d(100px, 100px, 100px);
+// 	}
+// 	.animate-block {
+// 		// font-size: 60px;
+// 		// transition: background-color 0.7s ease-out, transform 1s ease-out;
+// 		background-color: green;
+// 		width: 200px;
+// 		height: 200px;
+// 		position: absolute;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		margin: auto;
+// 		border-radius: 100%;
+// 	}
+// }
+// @keyframes bounce {
+// 	0% {
+// 		bottom: 100px;
+// 		width: 200px;
+// 		height: 200px;
+// 		transform: translate3d(0, 0, 0);
+// 	}
+// 	30% {
+// 		bottom: 50px;
+// 		width: 400px;
+// 		height: 100px;
+// 		transform: translate3d(100px, 100px, 100px);
+// 	}
+// 	60% {
+// 		bottom: 200px;
+// 		width: 200px;
+// 		height: 200px;
+// 		transform: translate3d(50px, 50px, 50px);
+// 	}
+// 	60% {bottom: 30% }
+// 	100% {bottom: 0}
+// }
+nav.main-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ccc;
+	height: 100%;
+	width: 50px;
+	& > a {
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+		text-align: center;
+		height: 21px;
+		margin-bottom: 20px;
+	}
+}
+ul.menu-lists {
+	background-color: #ccc;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 50px;
+	margin: 0;
+	padding: 0 20px;
+	list-style: none;
+	height: 100%;
+	animation: openMenu 0.5s ease-out;
+}
+ul.open-menu {
+	display: block;
+}
+@keyframes openMenu {
+	0% {left: -500px}
+	25% {left: -0px; opacity: 0;}
+	50% {left: 150px; opacity: 0.2;}
+	75% {left: 75px; opacity: 0.6;}
+	100% {left: 50px; opacity: 1;}
+}
+main-menu_toggle {
+	position: relative;
+}
+.menu.icon {
+  color: #000;
+  position: absolute;
+  // margin-left: 2px;
+  left: 50%;
+	transform: translateX(-50%);
+  margin-top: 10px;
+  width: 17px;
+  height: 1px;
+  background-color: currentColor;
+	&:before {
+		content: '';
+		position: absolute;
+		top: -5px;
+		left: 0;
+		width: 17px;
+		height: 1px;
+		background-color: currentColor;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 5px;
+		left: 0;
+		width: 17px;
+		height: 1px;
+		background-color: currentColor;
+	}
+}
+.close.icon {
+  color: #000;
+  position: absolute;
+  margin-top: 0;
+  // margin-left: 0;
+  width: 21px;
+  height: 21px;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 10px;
+		width: 21px;
+		height: 1px;
+		background-color: currentColor;
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 10px;
+		width: 21px;
+		height: 1px;
+		background-color: currentColor;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+}
+.icon, .icon:before, .icon:after, .icon i, .icon i:before, .icon i:after {
+	transition: all 0.4s ease;
+}
+
+
+.img-wrap {
+	position: relative;
+	width: 420px;
+	height: 420px;
+	margin: 0 auto;
+}
+.pendulum {
+	position: absolute;
+	top: 200px;
+	left: 162px;
+	z-index: -1;
+}
+.h-arrow {
+	position: absolute;
+	top: 198px;
+	left: 89px;
+}
+.m-arrow {
+	position: absolute;
+	top: 199px;
+	left: 200px;
 }

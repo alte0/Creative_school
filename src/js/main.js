@@ -3,7 +3,8 @@
 //= ../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js
 //= ../../bower_components/slick-carousel/slick/slick.min.js
 
+
 // чтобы работал слайдер, когда DOM не загружен. Document Ready
-$(function(){ 
+$(function(){
 	//= ./parts/sliders.js
 });

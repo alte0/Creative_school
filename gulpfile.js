@@ -1,21 +1,27 @@
+
 var gulp = require('gulp');
-var pug = require('gulp-pug');
 var browserSync = require('browser-sync');
-var sass = require("gulp-sass");
+var reload = browserSync.reload;
+var rimraf = require('rimraf');
+var pngquant = require('imagemin-pngquant');
+// var plugins = require('gulp-load-plugins')();
+var $ = require('gulp-load-plugins')();
+
+// var gulpLoadPlugins = require('gulp-load-plugins');
+// var plugins = gulpLoadPlugins();
+// var pug = require('gulp-pug');
+// var sass = require("gulp-sass");
 // отдельный watch
 // var watch = require('gulp-watch');
-var reload = browserSync.reload;
-var autoprefixer = require('gulp-autoprefixer');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var plumber = require('gulp-plumber');
-var cssnano = require('gulp-cssnano');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
+// var autoprefixer = require('gulp-autoprefixer');
+// var uglify = require('gulp-uglify');
+// var sourcemaps = require('gulp-sourcemaps');
+// var plumber = require('gulp-plumber');
+// var cssnano = require('gulp-cssnano');
+// var imagemin = require('gulp-imagemin');
 // костыль чтоб работать только с новыми картинками
-var newer = require('gulp-newer');
-var rimraf = require('rimraf');
-var rigger = require('gulp-rigger');
+// var newer = require('gulp-newer');
+// var rigger = require('gulp-rigger');
 // var pugInheritance = require('gulp-pug-inheritance');
 
 var path = {
@@ -23,7 +29,7 @@ var path = {
 		//исходные файлы
 		pug: './src/html/**/*.pug',
 		sass: './src/css/*.scss',
-		js: './src/js/**/*.js',
+		js: './src/js/*.js',
 		image: './src/img/**/*.*',
 		font: './src/font/**/*.*'
 	},
@@ -68,8 +74,8 @@ gulp.task('clean', function(cb){
 
 gulp.task("html", function() {
 	gulp.src(path.src.pug)
-	.pipe(plumber())
-	.pipe(pug({
+	.pipe($.plumber())
+	.pipe($.pug({
 		pretty: true
 	}))
 	.pipe(gulp.dest(path.build.src))
@@ -84,16 +90,16 @@ gulp.task("webserver", function() {
 //препроцессор sass build
 gulp.task('sass:build', function () {
   return gulp.src( path.src.sass )
-  	.pipe(plumber())
+  	.pipe($.plumber())
 		//чтоб не выкинуло из консли.
     .pipe(sass().on('error', sass.logError))
     //вкл сжатие
     // .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(autoprefixer({
+    .pipe($.autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-    .pipe(cssnano({
+    .pipe($.cssnano({
     	//не учитываем zindex
     	zindex: false
     }))
@@ -102,13 +108,13 @@ gulp.task('sass:build', function () {
 //препроцессор sass dev
 gulp.task('sass:dev', function () {
   return gulp.src( path.src.sass )
-  	.pipe(plumber())
-  	.pipe(sourcemaps.init())
+  	.pipe($.plumber())
+  	.pipe($.sourcemaps.init())
 		//чтоб не выкинуло из консли.
-    .pipe(sass().on('error', sass.logError))
+    .pipe($.sass().on('error', $.sass.logError))
     //вкл сжатие
     // .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-    .pipe(sourcemaps.write())
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest( path.build.style ))
     .on('end', browserSync.reload);
 });
@@ -116,25 +122,24 @@ gulp.task('sass:dev', function () {
 // копируем Font
 gulp.task('copyFont', function(){
 	gulp.src( path.src.font )
-	.pipe(plumber())
+	.pipe($.plumber())
 	.pipe( gulp.dest( path.build.font ) )
 	.on('end', browserSync.reload);
 });
 // копируем js файлы
 gulp.task('copyJs:dev', function(){
 	gulp.src( path.src.js )
-	.pipe(plumber())
-	.pipe(rigger())
-	.pipe(uglify())
+	.pipe($.plumber())
+	.pipe($.rigger())
 	.pipe( gulp.dest( path.build.js ) )
 	.on('end', browserSync.reload);
 });
 // копируем js файлы
 gulp.task('copyJs:bulid', function(){
 	gulp.src( path.src.js )
-	.pipe(plumber())
+	.pipe($.plumber())
 	.pipe(rigger())
-	.pipe(uglify())
+	.pipe($.uglify())
 	.pipe( gulp.dest( path.build.js ) )
 });
 
@@ -155,8 +160,8 @@ gulp.task("watch", function() {
 
 gulp.task('image', function () {
 	gulp.src( path.src.image )
-	.pipe(newer( path.src.image ))
-	.pipe(imagemin({
+	.pipe($.newer( path.src.image ))
+	.pipe($.imagemin({
 	    progressive: true,
 	    svgoPlugins: [{removeViewBox: false}],
 	    use: [pngquant()],
